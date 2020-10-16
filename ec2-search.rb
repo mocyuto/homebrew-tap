@@ -3,13 +3,15 @@
 class Ec2Search < Formula
   desc "Search ec2 instance easily"
   homepage "https://github.com/mocyuto/ec2-search"
-  url "https://github.com/mocyuto/ec2-search/releases/download/v0.2.0/ec2-search-x86_64-apple-darwin.tar.gz"
+  url "https://github.com/mocyuto/ec2-search/archive/v0.2.0.tar.gz"
   version "0.2.0"
-  sha256 "8b8379a15fc144cefd8e27aadc611abc85bccd2b34a6f11795815e4b4620536e"
+  sha256 "62342ced0f559320f8633cb86e84f5163ee78df151a48aab7c2a66ed2dee92d2"
   license "Apache-2.0"
 
+  depends_on "rust" => :build
+
   def install
-    bin.install "ec2-search"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
