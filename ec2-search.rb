@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 class Ec2Search < Formula
-  desc 'Search AWS EC2 easily'
+  desc 'Search AWS EC2 easily. named ec2s'
   homepage 'https://github.com/mocyuto/ec2-search'
-  version 'v0.10.1'
+  version 'v0.11.0'
   license 'Apache-2.0'
 
   bottle :unneeded
 
   if OS.mac?
     url "https://github.com/mocyuto/ec2-search/releases/download/#{version}/ec2-search-macos.tar.gz"
-    sha256 '96952b2afc94b983e2b3f9119be865cad1116a6f0b5488622c8cb800e2d6781f'
+    sha256 '6930408338ae61dc125246b3f9e507ef516778aaa1aec2671e5b021bbebc362d'
   elsif OS.linux?
     url "https://github.com/mocyuto/ec2-search/releases/download/#{version}/ec2-search-linux.tar.gz"
-    sha256 '8cfa5220574a848e5fa8dfa67310c4c4735bfef700b5904593fd3b94dd39397f'
+    sha256 '54d6b0d2a560a2e42a49d1311972be00bddb2a380b5ecdd41e58acbd35bda1bf'
   end
 
   def install
