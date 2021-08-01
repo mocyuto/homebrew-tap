@@ -3,17 +3,17 @@
 class Ec2Search < Formula
   desc 'Search AWS EC2 easily. named ec2s'
   homepage 'https://github.com/mocyuto/ec2-search'
-  version 'v0.12.0'
+  version 'v0.13.0'
   license 'Apache-2.0'
 
   bottle :unneeded
 
   if OS.mac?
     url "https://github.com/mocyuto/ec2-search/releases/download/#{version}/ec2-search-macos.tar.gz"
-    sha256 '4f83b02c9e4734a97a37af8feeaefefdd3599e4cf105c5aa6d4cd9e7d1941ef6'
+    sha256 'bcf31b8025901b5abb195afbaedae735557eba50a5e73690c959f2231e8296bb'
   elsif OS.linux?
     url "https://github.com/mocyuto/ec2-search/releases/download/#{version}/ec2-search-linux.tar.gz"
-    sha256 'cdc2bc156fd0c42a8bb0b27185ed38bbbfe9d82ef5823993e3ad5d6239e058d1'
+    sha256 '74eb36d97b3ee73aea06326d99061b44d5ee4601b144cdb0e816af88f72c78db'
   end
 
   def install
