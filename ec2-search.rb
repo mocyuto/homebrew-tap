@@ -6,8 +6,6 @@ class Ec2Search < Formula
   version 'v0.14.1'
   license 'Apache-2.0'
 
-  bottle :unneeded
-
   if OS.mac?
     url "https://github.com/mocyuto/ec2-search/releases/download/#{version}/ec2-search-macos.tar.gz"
     sha256 '22612fcbc6609478bfb7da68e7d1ae28217fd33b458eeba38b0bc749d5207331'
