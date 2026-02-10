@@ -3,24 +3,24 @@
 class GitWt < Formula
   desc 'Git Worktree helper CLI'
   homepage 'https://github.com/mocyuto/git-wt'
-  version 'v0.2.1'
+  version 'v0.2.2'
   license 'MIT'
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/mocyuto/git-wt/releases/download/#{version}/git-wt_darwin_arm64.tar.gz"
-      sha256 '3ef5b74bad2ab3dc3ecd7e50e8593aeeabb5fb479ff4a1dc5f9b13569c0d269d'
+      sha256 '70364d25f29e2501d48450d52a7207dfb142c6c70bb8dd747744ba936564c89c'
     else
       url "https://github.com/mocyuto/git-wt/releases/download/#{version}/git-wt_darwin_amd64.tar.gz"
-      sha256 'a79ebb9ce4cd40c46caf72204d09ec48a9764d25c8d1f1bdc969690712df36ee'
+      sha256 'ef2a76a1df0ee181e070a05b37667782175a50a47206f3ac39053aa43635d582'
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/mocyuto/git-wt/releases/download/#{version}/git-wt_linux_arm64.tar.gz"
-      sha256 'bd455cdb69eca4488a23280874a84f25661b5adc721f50eb7e858a095605abe4'
+      sha256 '0bafdfc0fbd55986f55c8097949cc057a481ee1c67942c773603cd7a70756064'
     else
       url "https://github.com/mocyuto/git-wt/releases/download/#{version}/git-wt_linux_amd64.tar.gz"
-      sha256 'f530b3209cc3d80247ed2a1faa052bc623e3c732933be50637b72a0284bb540e'
+      sha256 'b4f3a17c51d1ac58de4fca64883b05e12aa13a6c717e754349c0e9976f99522c'
     end
   end
 
