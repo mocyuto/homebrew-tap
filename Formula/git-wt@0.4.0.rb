@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GitWt < Formula
+class GitWtAT040 < Formula
   desc 'Git Worktree helper CLI'
   homepage 'https://github.com/mocyuto/git-wt'
   version 'v0.4.0'
