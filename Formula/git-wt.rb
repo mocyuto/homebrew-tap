@@ -6,6 +6,8 @@ class GitWt < Formula
   version 'v0.4.0'
   license 'MIT'
 
+  deprecate! date: '2026-02-14', because: 'has been renamed to zgt'
+
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/mocyuto/git-wt/releases/download/#{version}/git-wt_darwin_arm64.tar.gz"
@@ -32,6 +34,15 @@ class GitWt < Formula
     (bash_completion / 'git-wt').write output
     output = Utils.safe_popen_read("#{bin}/git-wt", 'completion', 'zsh')
     (zsh_completion / '_git-wt').write output
+  end
+
+  def caveats
+    <<~EOS
+      git-wt has been renamed to zgt.
+      Please uninstall git-wt and install zgt:
+        brew uninstall git-wt
+        brew install mocyuto/tap/zgt
+    EOS
   end
 
   test do
