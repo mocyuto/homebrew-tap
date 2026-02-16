@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Zgt < Formula
+class ZgtAT070 < Formula
   desc 'Git Worktree helper CLI'
   homepage 'https://github.com/mocyuto/zgt'
   version 'v0.7.0'
