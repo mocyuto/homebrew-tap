@@ -61,7 +61,11 @@ end
 python3 .agent/skills/update-homebrew-formula/scripts/update_formula.py Formula/<formula>@<version>.rb <owner>/<repo> v<version>
 ```
 
-## 3. 動作確認
+## 3. 自動クリーンアップ
+
+フォーミュラの更新または作成後、スクリプトは同一プロジェクトのバージョン付きフォーミュラ（`@`を含むもの）をチェックします。**保持されるのは最新の10バージョンまで**で、それより古いファイルは自動的に削除されます。
+
+## 4. 動作確認
 
 `brew` を使って、更新・作成したフォーミュラが正しくインストールできるか確認します。
 

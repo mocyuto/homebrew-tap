@@ -2,6 +2,8 @@ import sys
 import re
 import json
 import subprocess
+import os
+import glob
 
 def get_checksums(repo, version):
     try:
@@ -45,6 +47,35 @@ def update_formula(file_path, version, checksums):
     with open(file_path, 'w') as f:
         f.write(content)
 
+def cleanup_old_versions(formula_path, max_versions=10):
+    formula_dir = os.path.dirname(formula_path)
+    file_name = os.path.basename(formula_path)
+    
+    # Extract project name (e.g., 'zgt' from 'zgt.rb' or 'zgt@0.9.0.rb')
+    project_name = file_name.split('@')[0].split('.')[0]
+    
+    # Find all versioned files for this project: project_name@*.rb
+    pattern = os.path.join(formula_dir, f"{project_name}@*.rb")
+    versioned_files = glob.glob(pattern)
+    
+    if len(versioned_files) <= max_versions:
+        return
+
+    # Sort files by version
+    def get_version(path):
+        m = re.search(rf"{re.escape(project_name)}@([\d.]+)\.rb", os.path.basename(path))
+        if m:
+            return [int(part) for part in m.group(1).split('.') if part.isdigit()]
+        return []
+
+    versioned_files.sort(key=get_version)
+    
+    # Files to delete (oldest ones)
+    to_delete = versioned_files[:-max_versions]
+    for f in to_delete:
+        print(f"Deleting old version: {f}")
+        os.remove(f)
+
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         print("Usage: python update_formula.py <formula_path> <repo> <version>")
@@ -59,6 +90,7 @@ if __name__ == "__main__":
     if checksums:
         update_formula(formula_path, version, checksums)
         print("Successfully updated formula.")
+        cleanup_old_versions(formula_path)
     else:
         print("Failed to fetch checksums.")
         sys.exit(1)
