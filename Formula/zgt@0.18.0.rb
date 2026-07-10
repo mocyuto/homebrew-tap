@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-class ZgtAT0130 < Formula
+class ZgtAT0180 < Formula
   desc 'Git Worktree helper CLI'
   homepage 'https://github.com/mocyuto/zgt'
-  version 'v0.13.0'
+  version 'v0.18.0'
   license 'MIT'
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/mocyuto/zgt/releases/download/#{version}/zgt_darwin_arm64.tar.gz"
-      sha256 '86ed62343c0abc1461348e57624e0b5e326df6856d26961445713f63670748e1'
+      sha256 '0f1485f6538cc0052dfe5fa170cbde65f582754190551e9c5a5c053c6e985cb1'
     else
       url "https://github.com/mocyuto/zgt/releases/download/#{version}/zgt_darwin_amd64.tar.gz"
-      sha256 '79895c09113c10733610865e1acd560da5d0c97d6682869c885d0f1ae9abfdc4'
+      sha256 'f1ee11a432540ff294ca8df608c66d36b78bc977208b7b79c86e61f87321c84b'
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/mocyuto/zgt/releases/download/#{version}/zgt_linux_arm64.tar.gz"
-      sha256 '24b3c2e0eaa3bdc59ffe29c1b7a15053ad99675fb244a7a8670a3514485079a7'
+      sha256 'c2ebb6417282bdda56b6b5110a62c5b5bad6bed06cf92ed92b8c2471326d8f94'
     else
       url "https://github.com/mocyuto/zgt/releases/download/#{version}/zgt_linux_amd64.tar.gz"
-      sha256 'f478d182d8c32e4b1a5c5fcefc81039e6153ae8ec8d8c1010204bd105ac99a8c'
+      sha256 'bc6b4cfa5c1efc3d8cdbacdc75de2312fd71ee660b65714f54fbb8b257b7a58a'
     end
   end
 
